@@ -46,7 +46,7 @@ def on_click(message):
         help_button(message)
 
     else:
-        bot.send_message(message.chat.id, "Команда не распознана")
+        bot.send_message(message.chat.id, "Команда не распознана.")
         start(message)
 
 
@@ -92,7 +92,7 @@ def enter_body_name(message):
             bot.send_video(message.chat.id, img, None)
             img.close()
         else:
-            bot.send_message(message.chat.id, "Объект не найден")
+            bot.send_message(message.chat.id, "Объект не найден.")
     start(message)
 
 
@@ -158,11 +158,11 @@ def enter_initial_condition_continue(message):
                     bot.send_video(message.chat.id, img, None)
                     img.close()
                 else:
-                    bot.send_message(message.chat.id, "Сингулярное решение")
+                    bot.send_message(message.chat.id, "Сингулярное решение.")
             else:
-                bot.send_message(message.chat.id, "Сингулярное решение")
+                bot.send_message(message.chat.id, "Сингулярное решение.")
         except ValueError:
-            bot.send_message(message.chat.id, "Некорректные данные")
+            bot.send_message(message.chat.id, "Некорректные данные.")
     start(message)
 
 
@@ -228,11 +228,11 @@ def add_initial_condition_continue(message):
                 conn.commit()
                 cur.close()
                 conn.close()
-                bot.send_message(message.chat.id, "Объект добавлен в базу данных")
+                bot.send_message(message.chat.id, "Объект добавлен в базу данных.")
             else:
-                bot.send_message(message.chat.id, "Объект с таким именем уже существует")
+                bot.send_message(message.chat.id, "Объект с таким именем уже существует.")
         else:
-            bot.send_message(message.chat.id, "Некорректные данные")
+            bot.send_message(message.chat.id, "Некорректные данные.")
     start(message)
 
 
@@ -267,7 +267,7 @@ def read_data(message):
 
         bot.register_next_step_handler(message, read_data_continue)
     else:
-        bot.send_message(message.chat.id, "Нет зарегистрированных объектов")
+        bot.send_message(message.chat.id, "Нет зарегистрированных объектов.")
         start(message)
 
 
@@ -326,9 +326,9 @@ def read_data_continue(message):
                 bot.send_video(message.chat.id, img, None)
                 img.close()
             else:
-                bot.send_message(message.chat.id, "Сингулярное решение")
+                bot.send_message(message.chat.id, "Сингулярное решение.")
         else:
-            bot.send_message(message.chat.id, "Объект не найден")
+            bot.send_message(message.chat.id, "Объект не найден.")
     start(message)
 
 
@@ -363,7 +363,7 @@ def delete_body(message):
 
         bot.register_next_step_handler(message, delete_body_continue)
     else:
-        bot.send_message(message.chat.id, "Нет зарегистрированных объектов")
+        bot.send_message(message.chat.id, "Нет зарегистрированных объектов.")
         start(message)
 
 
