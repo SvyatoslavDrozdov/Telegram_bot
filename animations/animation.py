@@ -10,13 +10,11 @@ warnings.filterwarnings('ignore')
 def make_anime(x_0, y_0, v_x_0, v_y_0, end_time, name):
     r_0 = (x_0 ** 2 + y_0 ** 2) ** 0.5
     dl = r_0 / 2000
-    # print("start solution")
     ERK2_solution_length_step = ERK2_solver_length(x_0, y_0, v_x_0, v_y_0, dl, end_time)
 
     if ERK2_solution_length_step.any():
         del_step = int(len(ERK2_solution_length_step) / 100)
         ERK2_solution_length_step = ERK2_solution_length_step[::del_step]
-        # print(len(ERK2_solution_length_step))
 
         x_solution = ERK2_solution_length_step[:, 0]
         y_solution = ERK2_solution_length_step[:, 1]
@@ -28,7 +26,6 @@ def make_anime(x_0, y_0, v_x_0, v_y_0, end_time, name):
         diameter = max(abs(x_max - x_min), abs(y_max - y_min))
 
         # Анимация отрисовки решения
-
         style.use('dark_background')
 
         fig = figure()
