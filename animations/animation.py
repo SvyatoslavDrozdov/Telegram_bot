@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from matplotlib.pyplot import style, figure, axes
 from celluloid import Camera
 import warnings
-from Telegram_bot.solver.ERK2_l import ERK2_solver_length
+from solver.ERK2_l import ERK2_solver_length
 
 warnings.filterwarnings('ignore')
 
