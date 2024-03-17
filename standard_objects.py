@@ -13,7 +13,7 @@ def perihelion(a, e):
 conn = sqlite3.connect("database.db")
 cur = conn.cursor()
 
-# cur.execute("""DROP TABLE standard_obj""")
+cur.execute("""DROP TABLE standard_obj""")
 cur.execute(
     """CREATE TABLE IF NOT EXISTS standard_obj (
     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -50,7 +50,7 @@ cur.execute("""INSERT INTO standard_obj (name, x, y, v_x, v_y, end_time)
             VALUES ("Марс", 	'%s', 0, 0,  '%s', '%s')""" % (Mars_perihelion, Mars_v_p, Mars_period))
 
 cur.execute("""INSERT INTO standard_obj (name, x, y, v_x, v_y, end_time)
-            VALUES ("Комета Галея", 5.24824e12, 0, 0, 0.9e3, 2209032000)""")
+            VALUES ("Комета Галлея", 5.24824e12, 0, 0, 0.9e3, 2209032000)""")
 
 conn.commit()
 cur.close()
