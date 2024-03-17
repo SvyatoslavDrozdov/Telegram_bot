@@ -436,4 +436,10 @@ def help_button(message):
     start(message)
 
 
+# На случай перезапуска бота -------------------------------------------------=-----------------------------------------
+@bot.message_handler()
+def unknown_command(message):
+    bot.send_message(message.chat.id, "Для работы с ботом отправьте команду /start.")
+
+
 bot.infinity_polling()
